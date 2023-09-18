@@ -1,0 +1,46 @@
+curl --location 'http://localhost:8080/secret-app-authentication/createAccount' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email":"abcd@gmail.com",
+    "password":"@432sddsHDG",
+    "subscription":"PREMIUM"
+}'
+
+
+
+curl --location 'http://localhost:8080/secret-app-authentication/authenticate' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email":"abcd@gmail.com",
+    "password":"@432sddsHDG"
+}'
+
+
+curl --location 'http://localhost:8080/secret-app-authentication/login' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJTZWNyZXQtYXBwIiwic3ViIjoiYWJjZEBnbWFpbC5jb20iLCJhdWQiOiJQdWJsaWMiLCJleHAiOjE2OTI1OTg2MzUsImlhdCI6MTY5MjQyNTgzNX0.GtxFwwwjfT09bbLeERPDYbBnq0kcWNDDcb5xFHIJG5AB-xWnwOV2T9Kb9HMUentdmkCjlny8g9ltSiIsfow3Cw'
+
+curl --location 'http://localhost:8080/secret-app-authentication/savePassword' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJTZWNyZXQtYXBwIiwic3ViIjoiYW5hbmRAZ21haWwuY29tIiwiYXVkIjoiUHVibGljIiwiZXhwIjoxNjk1MTU1ODkzLCJpYXQiOjE2OTQyOTE4OTN9.DvEGDkmZ2XkiRfRONHCrAPB0-UceWLwIpKHDOGtgfp5H29OYB4a37Omv12Gxpib_Mq7uWen-4xXqp4f82UpRWA' \
+--data-raw '{
+
+    "title":"Maang",
+    "password":"1234!aBbcd&3566457457$$#@##$@#@$dhgfghthrtyfghDFGDFGDFGHDFGHDFGHFGHFGHFGHFGHDFGH"
+}'
+
+
+curl --location --request GET 'http://localhost:8080/secret-app-authentication/getAllTitles' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJTZWNyZXQtYXBwIiwic3ViIjoiYW5hbmRAZ21haWwuY29tIiwiYXVkIjoiUHVibGljIiwiZXhwIjoxNjk1MTUzODI0LCJpYXQiOjE2OTQyODk4MjR9.Km4p0i_LhIigbe1zMuU97-FebBdAH4DDFDVXuLwzOg85XtsAk7Flz4XxXgBe-2PbwfokPB-vyl3XzAKBXMT8_A' \
+--data-raw '{
+"email":"anand@gmail.com"
+
+}'
+
+curl --location --request GET 'http://localhost:8080/secret-app-authentication/getPasswordByEmailAndTitle' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJTZWNyZXQtYXBwIiwic3ViIjoiYW5hbmRAZ21haWwuY29tIiwiYXVkIjoiUHVibGljIiwiZXhwIjoxNjk1MTU1ODkzLCJpYXQiOjE2OTQyOTE4OTN9.DvEGDkmZ2XkiRfRONHCrAPB0-UceWLwIpKHDOGtgfp5H29OYB4a37Omv12Gxpib_Mq7uWen-4xXqp4f82UpRWA' \
+--data '{
+"title":"Maang"
+
+}'
